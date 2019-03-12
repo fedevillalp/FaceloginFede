@@ -1,36 +1,5 @@
-//var db = require("../../models"); this does not recognize require ? why ?
-
-// // Get references to page elements
-// var $exampleText = $("#example-text");
-// var $exampleDescription = $("#example-description");
-// var $submitBtn = $("#submit");
-// var $exampleList = $("#example-list");
-
 // The API object contains methods for each kind of request we'll make
 var API = {
-
-  // saveExample: function(example) {
-  //   return $.ajax({
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     type: "POST",
-  //     url: "api/examples",
-  //     data: JSON.stringify(example)
-  //   });
-  // },
-  // getExamples: function() {
-  //   return $.ajax({
-  //     url: "api/examples",
-  //     type: "GET"
-  //   });
-  // },
-  // deleteExample: function(id) {
-  //   return $.ajax({
-  //     url: "api/examples/" + id,
-  //     type: "DELETE"
-  //   });
-  // },
 
   postFace: function (link,first_name, user_name) {
     console.log('postface. This is data to be posted:');
@@ -104,74 +73,6 @@ var API = {
 
 };
 
-// // refreshExamples gets new examples from the db and repopulates the list
-// var refreshExamples = function() {
-//   API.getExamples().then(function(data) {
-//     var $examples = data.map(function(example) {
-//       var $a = $("<a>")
-//         .text(example.text)
-//         .attr("href", "/example/" + example.id);
-
-//       var $li = $("<li>")
-//         .attr({
-//           class: "list-group-item",
-//           "data-id": example.id
-//         })
-//         .append($a);
-
-//       var $button = $("<button>")
-//         .addClass("btn btn-danger float-right delete")
-//         .text("ｘ");
-
-//       $li.append($button);
-
-//       return $li;
-//     });
-
-//     $exampleList.empty();
-//     $exampleList.append($examples);
-//   });
-// };
-
-// // handleFormSubmit is called whenever we submit a new example
-// // Save the new example to the db and refresh the list
-// var handleFormSubmit = function(event) {
-//   event.preventDefault();
-
-//   var example = {
-//     text: $exampleText.val().trim(),
-//     description: $exampleDescription.val().trim()
-//   };
-
-//   if (!(example.text && example.description)) {
-//     alert("You must enter an example text and description!");
-//     return;
-//   }
-
-//   API.saveExample(example).then(function() {
-//     refreshExamples();
-//   });
-
-//   $exampleText.val("");
-//   $exampleDescription.val("");
-// };
-
-// // handleDeleteBtnClick is called when an example's delete button is clicked
-// // Remove the example from the db and refresh the list
-// var handleDeleteBtnClick = function() {
-//   var idToDelete = $(this)
-//     .parent()
-//     .attr("data-id");
-
-//   API.deleteExample(idToDelete).then(function() {
-//     refreshExamples();
-//   });
-// };
-
-// // Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);
-
 //This button makes a post to api/face/upload using API.postFace()
 $("#uploadFace").on("click", function (event) {
 
@@ -194,7 +95,7 @@ $("#uploadFaceFile").on("click", function (event) {
   API.postFaceFile($linkToPicture);
 })
 
-//This temporary button makes a post to api/face/compare
+//This button makes a post to api/face/compare
 $("#faceCompare").on("click", function (event) {
 
   event.preventDefault();
@@ -204,13 +105,14 @@ $("#faceCompare").on("click", function (event) {
   API.postFaceCompare($linkToPicture);
 })
 
-//This temporary button makes a post to api/face/compare
+//This button makes a post to api/face/compare
 $("#goto-login-page").on("click", function (event) {
   event.preventDefault();
  API.login()
 })
 
-//This temporary button makes a post to api/face/compare
+//This button makes a post to api/face/compare
+//No longer needed becasue the POST form has an action
 // $("#submit-login").on("click", function (event) {
 //   console.log('submit-login was pressed')
 //   $username = $("#userName").val().trim();

@@ -2,8 +2,6 @@ var db = require("../models");
 var fs = require('fs');
 var filename = ("man.jpg");
 
-//'use strict';
-
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
@@ -13,8 +11,6 @@ const subscriptionKey = process.env.API_KEY;
 // subscription keys. For example, if you got your subscription keys from
 // westus, replace "westcentralus" in the URL below with "westus".
 const uriBase = 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect';
-
-
 
 var imageUrl =
   'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?cs=srgb&dl=adult-confidence-elderly-man-1139743.jpg&fm=jpg';
@@ -61,27 +57,7 @@ module.exports = function (app) {
   app.get('/login', function(req, res){
     res.render('login')
   })
-  // Create a new example
-  // app.post("/api/signup", function(req, res) {
-  //   db.users.create({
-  //     firstName: 'Dre', 
-  //     lastName: 'Campbell', 
-  //     userPicture: 'https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688',
-  //     username: 'drecamp8',
-  //     password: 'password'
-  //   }).then(function(dbUsers) {
-  //     console.log('User created...');
-  //     res.json(dbUsers);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
+  
   //When the client gets this route , a POST is made to the FACE API using 
   //the request library. 
 
@@ -166,8 +142,6 @@ module.exports = function (app) {
       }
     };
 
-    //options.body = '{"url": ' +     imageUrl +   '}'
-
     //upload link to microsoft and extract faceID and asign to faceId1
     request.post(options_compare, (error, response, body) => {
       if (error) {
@@ -175,9 +149,7 @@ module.exports = function (app) {
         return;
       }
       let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-      //console.log('fresh link response this becomes faceId1\n');
-      //console.log(jsonResponse);
-
+      
       var faceId = JSON.parse(body);
       faceId1 = faceId[0].faceId;  // undefined
       console.log('FaceID from fresh link is: ' + faceId1);

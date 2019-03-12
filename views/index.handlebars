@@ -1,18 +1,32 @@
-<div id="home-header">
-  <div class="container clearfix">
-    <div class="row">
-      <h5 id="header-tagline" class="col-xs-7 col-md-9">Meet and chat with your doppelganger for free!
-      </h5>
-      <div id="home-header" class="col-xs-5 col-md-3">
-        <a class="btn btn-primary" href="/login">Login</a>
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Face Login</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            {{!-- <li class="nav-item">
+              <a class="nav-link" href="contact.html">Login</a>
+            </li> --}}
+
+            <li id="home-header" class="nav-item">
+                  <a class="btn btn-primary" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </nav>
+  <!-- Navigation END-->
+
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-7 register-center">
-      <img src="../assets/images/login_avatar.png" class="avatar2">
       <h2>Register</h2>
       <div class="register-form">
         <div class="form-group">
@@ -31,141 +45,8 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-  <video id="capturebox" id='capture' autoplay width="306" height="150"></video>
-  <img src="">
-  <canvas style="display:none"></canvas>
-  <img id="screenshot-img move-up" style="text-align:center, border-color:white, background-color: white">
-  {{!-- </div> --}}
-  <video autoplay></video>
-  <img src="">
-  <canvas style="display:none;"></canvas>
-  <div id="screenshot" style="text-align:center;">
-    <video class="videostream" autoplay=""></video>
-    <img id="screenshot-img" />
-    <p><button class="capture-button">Start Camera</button></p>
-    <p><button id="screenshot-button">Take Picture</button></p>
-  </div>
-  {{!-- <div class='img-container'> --}}
-
 </div>
 
 
-
-
-
-
-
-
-
-
-{{!-- <div class= 'container'> 
-    <div class= 'row'>
-      <style>
-        #screenshot-img,
-        .videostream {
-          width: 250px;
-          height: 200px;
-        }
-      </style>
-        <video autoplay></video>
-        <img src="">
-        <canvas style="display:none;"></canvas>
-      
-        <div id="screenshot" style="text-align:center;">
-          <video class="videostream" autoplay=""></video>
-          <img id="screenshot-img"/>
-          <p><button class="capture-button">Capture video</button>
-          </p>
-          <p><button id="screenshot-button">Take screenshot</button></p>
-        </div>
-    </div>
-  </div> --}}
-
-{{!-- <div class="container-fluid">
-  <div id="home-header">
-    <div class="container clearfix">
-      <div class="row">
-        <h4 id="header-tagline" class="col-xs-7 col-md-9">Meet and chat with new people for free!
-        </h4>
-        <div id="header-login" class="col-xs-5 col-md-3">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpWindow">Log In</button>
-          <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" ariia-labelledby="logInLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3 class="modal-title" id="logInLabel">Log In</h3>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form>
-    <div class="container" style="content=center">
-      <div class="form-group" action="action_page.php" id="credentials">
-        <label for="uName">Create User Name</label>
-        <input type="text" class="form-control" id="userName" placeholder="User Name">
-
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="uPassword" placeholder="Enter Password">
-        </div>
-        <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
-          placeholder="Enter link to Picture"></textarea>
-        <br>
-        <button id="uploadFace" type="submit">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-<form>
-<div class="container" style="content=center">
-  <form action="action_page.php">
-    <div id="credentials">
-      <label for="userName"><b>Create Username</b>
-        <input type="text" id="username" placeholder="Enter Username" required>
-      </label>
-      <br>
-      <label for="firstName"><b>First Name</b>
-        <input type="text" id="first_name" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <label for="lastName"><b>Last Name</b>
-        <input type="text" id="last_name" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <label for="psw"><b>Password</b>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
-        placeholder="Enter link to Picture"></textarea>
-      <br>
-      <button id="uploadFace" type="submit">Submit</button>
-    </div>
-</div>
-</form> --}}
-
-{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 <script src="/js/index.js"></script>
 <script src="/js/view.js"></script>
