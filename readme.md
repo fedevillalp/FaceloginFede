@@ -9,10 +9,10 @@ Currently, the app works by using links to pictures. The next stepp is to add ca
 ![Results Image](https://github.com/fedevillalp/FaceloginFede/blob/master/image1.png)
 
 #2. Example #2
-![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image3.png)
+![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image2.png)
 
 #2. Example #3
-![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image4.png)
+![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image3.png)
 
 #2. Example #4
-![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image5.png)
+![Results Image](https://github.com/fedevillalp/foodrecognition/blob/master/image4.png)
