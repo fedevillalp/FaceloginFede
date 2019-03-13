@@ -84,7 +84,7 @@ module.exports = function (app) {
       faceId = faceId[0].faceId;
 
       db.users.create({
-        firstName: req.body.first_name,
+        //firstName: req.body.first_name,
         userName: req.body.user_name,
         pictureLink: imageUrl,
         faceId: faceId,

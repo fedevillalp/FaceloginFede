@@ -1,9 +1,9 @@
 // The API object contains methods for each kind of request we'll make
 var API = {
 
-  postFace: function (link,first_name, user_name) {
+  postFace: function (link, user_name) {  //function (link,first_name, user_name)
     console.log('postface. This is data to be posted:');
-    console.log(link, first_name, user_name);
+    //console.log(link, first_name, user_name);
     //insert username and userlastname into database
     return $.ajax({
       headers: {
@@ -13,13 +13,14 @@ var API = {
       url: "api/face/upload",
       data: JSON.stringify({ 
                             link: link,
-                            first_name: first_name,
+                            //first_name: first_name,
                             user_name: user_name
                            })
     }).then(function(data){
       var data = JSON.parse(data);
       console.log('This is THEN condition of postFace. The Microsoft faceId is: ')
       console.log(data[0].faceId);
+      alert('Thank you.  Registration succesful ! ');
       //insert faceID into database:
     });
   },
@@ -78,11 +79,11 @@ $("#uploadFace").on("click", function (event) {
 
   event.preventDefault();
   $linkToPicture = $("#link-to-picture").val().trim();
-  $first_name = $("#first_name").val().trim();; // need to get gtom text box
+ // $first_name = $("#first_name").val().trim();; // need to get gtom text box
   $user_name = $("#user_name").val().trim();; // ned to get from text box
   console.log($linkToPicture);
   console.log('Calling API.getFace()');
-  API.postFace($linkToPicture, $first_name, $user_name);
+  API.postFace($linkToPicture, $user_name); //postFace($linkToPicture, $first_name, $user_name)
 })
 
 //This button makes a post to api/face/uploadfile

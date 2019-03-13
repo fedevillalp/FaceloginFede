@@ -1,23 +1,68 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Face ID</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            {{!-- <li class="nav-item">
+              <a class="nav-link" href="contact.html">Login</a>
+            </li> --}}
+
+            <li id="home-header" class="nav-item">
+                  <a class="btn btn-primary" href="/">Back</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <!-- Navigation END-->
+
 <br><br>
-<div class='container mx-auto light-back'>
-    <div class='row'>
-        <div class='col-lg-12'>
-            <h3 id= 'identical Cont'>Is Identical: <h2 id= 'Identical'>{{authentication_result.isIdentical}}</h2></h3>
-            </div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col">
     </div>
+
+      <div class="col-10">
+
+        <div class='row'>
+          <div class='col-lg-12'>
+              <h5 id= 'identical Cont'>Authentication results: {{authentication_result.isIdentical}} </h5>
+          </div>
+        </div>
             <div class='row'>
                 <div class='col-lg-12'>
-            <h3> Confidence: <h2 id= 'Identical' >{{authentication_result.confidence}}</h2></h3>
+            <h5> Conficence that Face belongs to the same person:  {{authentication_result.confidence}} </h5>
+            </div>
+      </div>
+
+    <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src='{{link_fresh_pic}}' alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Your Face on File</h5>
+              </div>
+          
         </div>
+        <div class="card">
+          <img class="card-img-top" src='{{link_registered_pic}}' alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Face you used to Login</h5>
+            </div>
+          
+        </div>
+
+        <div class="col">
     </div>
-    <div class='row'>
-        <div class='col-lg-6'>
-            <img id='fresh' src='{{link_fresh_pic}}' />
-            <p>Image you logged in with.</p>
-        </div>
-        <div class='col-lg-6'>
-            <img id='old' src='{{link_registered_pic}}' />
-            <p>Image you registered with.</p>
-        </div>
+      
     </div>
+</div>
+</div>
 </div>
